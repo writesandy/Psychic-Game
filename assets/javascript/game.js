@@ -6,14 +6,17 @@ var wins = 0;
 var losses = 0;
 var guesses = 5;
 var guessesDone = "";
-
-
-
 var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-var randomLetter = letters.charAt(Math.floor(Math.random()*letters.length));
-console.log(randomLetter);
 
+function startGame () {
+    var randomLetter = "";
+    var randomLetter = letters.charAt(Math.floor(Math.random()*letters.length));
+    console.log(randomLetter);
+    return randomLetter;
+}
+
+    let randomLetter = startGame();
 
 
     document.addEventListener('keydown', (event) => {
@@ -32,6 +35,8 @@ console.log(randomLetter);
             guessesDone = ""; 
             guesses = 5;
             document.getElementById('Guesses').innerHTML=guesses;
+            startGame();
+
 
         
         } else { guesses--;
@@ -44,6 +49,8 @@ console.log(randomLetter);
                 guessesDone = "";
                 guesses = 5;
                 document.getElementById('Guesses').innerHTML=guesses;
+                randomLetter;
+
             }
         }
 
