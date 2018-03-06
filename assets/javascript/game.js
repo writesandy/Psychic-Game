@@ -2,22 +2,21 @@
 
 //variables 
 
-var wins = 0;
-var losses = 0;
-var guesses = 5;
-var guessesDone = "";
-var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+let wins = 0;
+let losses = 0;
+let guesses = 5;
+let guessesDone = "";
+let randomLetter = "";
+const letters = "abcdefghijklmnopqrstuvwxyz"
 
 
 function startGame () {
-    var randomLetter = "";
-    var randomLetter = letters.charAt(Math.floor(Math.random()*letters.length));
+    randomLetter = letters.charAt(Math.floor(Math.random()*letters.length));
     console.log(randomLetter);
     return randomLetter;
 }
 
-    let randomLetter = startGame();
-
+startGame();
 
     document.addEventListener('keydown', (event) => {
    
@@ -49,7 +48,7 @@ function startGame () {
                 guessesDone = "";
                 guesses = 5;
                 document.getElementById('Guesses').innerHTML=guesses;
-                randomLetter;
+                startGame();
 
             }
         }
